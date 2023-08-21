@@ -7,8 +7,8 @@ u=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-validate() {
-    if [ $1 -ne 0 ]
+validate(){
+    if [ $? -ne 0 ]
     then 
         echo -e " $2 is $R FAILURE $N"
         exit 1
@@ -25,4 +25,6 @@ yum install git -y &>> $LOGFILE
 validate $? "Git installation"
 yum install mysql -y &>> $LOGFILE
 validate $? "MySQL installation"
+amazon-linux-extras install nginx1 -y &>> $LOGFILE
+validate $? "Nginx installation"
 
