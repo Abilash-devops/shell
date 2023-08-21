@@ -10,3 +10,10 @@ echo " Please run the script with root or superuser previliges "
 exit 1
 fi
 yum install git -y &>> $LOGFILE
+if [ $? -ne 0 ]
+then 
+    echo " The requested package is already installed "
+    exit 1
+else
+    echo " The requested package installed sucessfully "
+fi
