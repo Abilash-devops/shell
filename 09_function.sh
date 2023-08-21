@@ -23,3 +23,6 @@ exit 1
 fi
 yum install git -y &>> $LOGFILE
 validate $? "Git installation"
+yum install mysql -y &>> $LOGFILE
+validate $? "MySQL installation"
+
