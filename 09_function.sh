@@ -21,5 +21,5 @@ then
 echo " Please run the script with root or superuser previliges "
 exit 1
 fi
-yum install gitt -y &>> $LOGFILE
+yum install git -y &>> $LOGFILE
 validate $? "Git installation"
