@@ -1,7 +1,7 @@
 #!/bin/bash
 D=$(date)
 SCRIPT_NAME=$0
-LOG_PATH=/home/ec2-user/shell/logs
+LOG_PATH=/home/centos/shell/logs
 LOGFILE=$LOG_PATH/$D-$SCRIPT_NAME-log
 u=$(id -u)
 R="\e[31m"
