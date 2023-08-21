@@ -25,6 +25,6 @@ yum install git -y &>> $LOGFILE
 validate $? "Git installation"
 yum install mysql -y &>> $LOGFILE
 validate $? "MySQL installation"
-amazon-linux-extras install nginx1 -y &>> $LOGFILE
+amazon-linux-extras install nginx11 -y &>> $LOGFILE
 validate $? "Nginx installation"
 
