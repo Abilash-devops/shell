@@ -2,7 +2,7 @@
 D=$(date +%F:%H:%M:%S)
 SCRIPT_NAME=$0
 LOG_PATH=/home/ec2-user/shell/logs
-LOGFILE=$LOG_PATH/$SCRIPT_NAME-log
+LOGFILE=$LOG_PATH/$D-$SCRIPT_NAME-log
 u=$(id -u)
 if [ $u -ne 0 ]
 then
