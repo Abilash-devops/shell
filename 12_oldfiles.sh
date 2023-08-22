@@ -13,4 +13,6 @@ read -p "Are you sure you want to delete these files? (y/N) " response
 if [[ "$response" = "y" ]]; then
   # Delete the files
   find /home/centos/shell/applogs -mtime +14 -type f -exec rm {} \; &>> $LOGFILE
+  else
+  echo " You selected no option so we are not deleting any files which are older than 14 days"
 fi

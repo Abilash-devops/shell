@@ -20,6 +20,8 @@ validate(){
         exit 1
     else
         echo -e " $2 is $G SUCCESS $N"
+        y=$(yum list installed $i)
+        echo "Displaying the output :$y"
     fi
 }
 for i in $@ 
@@ -29,7 +31,7 @@ yum list installed $i &>> $LOGFILE
     then
     echo " $i package is not installed, Lets install it "
     yum install $i -y &>> $LOGFILE
-    validate $? "$i"
+    validate $? "$i" 
     else
     echo -e " $i is $Y ALREADY INSTALLED $N"
     fi
