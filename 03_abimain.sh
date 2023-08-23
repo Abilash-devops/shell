@@ -18,19 +18,26 @@ abi(){
 
     if [ $? -ne 0 ]
     then 
-        echo -e " $2 installation is $R FAILURE $N"
+        echo -e " $i installation is $R FAILURE $N"
     else
-        echo -e " $2 installtion is $G SUCCESS $N"
+        echo -e " $i installtion is $G SUCCESS $N"
     fi
+    #y=$(yum list installed $i) &>> $LOGFILE
+    #echo "Installed version is:$y"
 }
 
-yum install gitt -y &>>$LOGFILE
-
-abi $? "git"
-
-yum install ngiinx -y &>>$LOGFILE
-
-abi $? "nginx"
+for i in $@ 
+do 
+yum list installed $i &>> $LOGFILE
+    if [ $? -ne 0 ]
+    then
+    echo " $i package is not installed, Lets install it "
+    yum install $i -y &>> $LOGFILE
+    abi $? "$i" 
+    else
+    echo -e " $i is $Y ALREADY INSTALLED $N"
+    fi
+done
 
 
 
