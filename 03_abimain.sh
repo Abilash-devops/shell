@@ -1,5 +1,5 @@
 #!/bin/bash
-d=$(date +%F)
+d=$(date +%F:%H:%M:%S)
 LOGPATH=/home/centos/shell/logs
 SCRIPT_NAME=$0
 LOGFILE=$LOGPATH/$0-$d-log
