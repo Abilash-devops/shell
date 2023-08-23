@@ -9,21 +9,24 @@ then
     echo " Bro you dont have acess with this user Please try as root or sudo acess"
     exit 1
 fi
+
+abi(){
+
+    if [ $? -ne 0 ]
+    then 
+        echo " $2 installation is failure"
+    else
+        echo " $2 installtion is success"
+    fi
+}
+
 yum install git -y &>>$LOGFILE
 
-if [ $? -ne 0 ]
-then 
-    echo " git installation is failure"
-else
-    echo " git installtion is success"
-fi
+abi $? "git"
 
 yum install nginx -y &>>$LOGFILE
 
-if [ $? -ne 0 ]
-then 
-    echo " nginx installation is failure"
-else
-    echo " nginx installtion is success"
-fi
+abi $? "nginx"
+
+
 
