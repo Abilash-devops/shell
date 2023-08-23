@@ -24,11 +24,11 @@ abi(){
     fi
 }
 
-yum install git -y &>>$LOGFILE
+yum install gitt -y &>>$LOGFILE
 
 abi $? "git"
 
-yum install nginx -y &>>$LOGFILE
+yum install ngiinx -y &>>$LOGFILE
 
 abi $? "nginx"
 
