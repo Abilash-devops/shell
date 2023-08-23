@@ -22,8 +22,8 @@ abi(){
     else
         echo -e " $i installtion is $G SUCCESS $N"
     fi
-    #y=$(yum list installed $i) &>> $LOGFILE
-    #echo "Installed version is:$y"
+    y=$(yum list installed $i) &>> $LOGFILE
+    echo "Installed version is:$y"
 }
 
 for i in $@ 
