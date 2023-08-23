@@ -14,19 +14,19 @@ abi(){
 
     if [ $? -ne 0 ]
     then 
-        echo " $2 installation is failure"
+        echo " $1 installation is failure"
     else
-        echo " $2 installtion is success"
+        echo " $1 installtion is success"
     fi
 }
 
 yum install git -y &>>$LOGFILE
 
-abi $? "abi"
+abi $? "git"
 
 yum install nginx -y &>>$LOGFILE
 
-abi $? "padma"
+abi $? "nginx"
 
 
 
