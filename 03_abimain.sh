@@ -9,7 +9,7 @@ then
     echo " Bro you dont have acess with this user Please try as root or sudo acess"
     exit 1
 fi
-yum install git -y &>>LOGFILE
+yum install git -y &>>$LOGFILE
 
 if [ $? -ne 0 ]
 then 
