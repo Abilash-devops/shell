@@ -22,11 +22,11 @@ abi(){
 
 yum install git -y &>>$LOGFILE
 
-abi $? "git"
+abi $? "abi"
 
 yum install nginx -y &>>$LOGFILE
 
-abi $? "nginx"
+abi $? "padma"
 
 
 
