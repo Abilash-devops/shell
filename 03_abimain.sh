@@ -18,3 +18,12 @@ else
     echo " git installtion is success"
 fi
 
+yum install nginx -y &>>$LOGFILE
+
+if [ $? -ne 0 ]
+then 
+    echo " nginx installation is failure"
+else
+    echo " nginx installtion is success"
+fi
+
